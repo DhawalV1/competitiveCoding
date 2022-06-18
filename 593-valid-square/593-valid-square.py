@@ -17,5 +17,4 @@ class Solution:
 				return are_diagonals_middle_point_the_same(po1, po2, po3, po4) and are_diagonals_have_equal_length(po1, po2, po3, po4) and are_points_are_merge(po1, po2, po3, po4)
 					
 		return check_square(p1, p2, p3, p4) or check_square(p1, p3, p2, p4) or check_square(p1, p4, p2, p3)
-                
-        
+	
