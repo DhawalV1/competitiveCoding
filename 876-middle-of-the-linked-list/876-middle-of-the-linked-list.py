@@ -12,4 +12,12 @@ class Solution:
                 return head
             head = head.next
             curri += 1
+            
+        '''
+        slow,fast = head,head
+        while head and head.next:
+            slow = slow.next
+            fast = fast.next.next
         
+        return slow
+        '''
