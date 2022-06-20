@@ -5,8 +5,8 @@ class Solution:
         m = (len(nums)-1)//2
         while m<h:
             if nums[m+1]>nums[m]:
-                l = m
-                m = (l+h+1)//2
+                l = m+1
+                m = (l+h)//2
             else:
                 h = m
                 m = (l+h)//2
