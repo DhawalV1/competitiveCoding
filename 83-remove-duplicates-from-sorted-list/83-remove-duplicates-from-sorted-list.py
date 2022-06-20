@@ -12,7 +12,7 @@ class Solution:
         if not cur.next:
             return cur
         while(cur.next):
-            if ( cur.next and  (cur.val==cur.next.val)):
+            if (cur.val==cur.next.val):
                 cur.next=cur.next.next
             else:
                 cur=cur.next
