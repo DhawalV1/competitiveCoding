@@ -19,7 +19,7 @@ class Solution:
         l3 = ListNode(num3[0])
         itr = l3
         for i in range(1,len(num3)):
-            itr.next = ListNode(int(num3[i]))
+            itr.next = ListNode(num3[i])
             itr = itr.next
         return l3
         
