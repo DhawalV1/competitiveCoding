@@ -11,7 +11,7 @@ class Solution:
     
    
         
-        def dfs(s, t):
+        def dfs(t,s):
             if not s and not t: return True
             if not s or not t: return False
             return s.val == t.val and dfs(s.left, t.left) and dfs(s.right, t.right)
