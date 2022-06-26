@@ -7,14 +7,14 @@ class Solution:
 
             if l in dp:return dp[l]
             
-            else:
+            
                 
 
-                dp[l]=0
-                for i in range(1,l+1):
-                    dp[l] += ct_tree(i-1)*ct_tree(l-i)
+            dp[l]=0
+            for i in range(1,l+1):
+                dp[l] += ct_tree(i-1)*ct_tree(l-i)
 
-                return dp[l]
+            return dp[l]
 
         return ct_tree(n)
         
