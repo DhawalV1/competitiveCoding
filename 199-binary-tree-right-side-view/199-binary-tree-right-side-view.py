@@ -17,9 +17,9 @@ class Solution:
     def helper(self,root,res,depth):
         
         if root is None:
-            return 
+            return None
         
-        if depth == len(res):
+        if depth==len(res):
             res.append(root.val)
             
         self.helper(root.right,res,depth+1)
