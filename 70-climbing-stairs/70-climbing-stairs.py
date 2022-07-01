@@ -10,10 +10,9 @@ class Solution:
             
         
     
-            if n == 1:
-                res =  1
-            elif n == 2:
-                res = 2
+            if n <3:
+                res =  n
+            
             else:
                 res = helper(n-1) + helper(n-2)
                 
