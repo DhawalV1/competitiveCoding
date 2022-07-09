@@ -7,19 +7,22 @@
 class Solution:
     def flatten(self, root: Optional[TreeNode]) -> None:
         
-        curr = root
+        def dfs(root):
+            if not root:
+                return None
         
-        while curr:
-            if curr.left != None:
-                p = curr.left
-                while p.right!= None:
-                    p = p.right
-                    
-                p.right = curr.right
-                curr.right = curr.left
-                curr.left = None
+        
+            lt = dfs(root.left)
+            rt = dfs(root.right)
+            
+            if lt:
+                lt.right = root.right
+                root.right = root.left
+                root.left = None
                 
-            curr = curr.right
+            return rt or lt or root
+        
+        return dfs(root)
         
         
         
