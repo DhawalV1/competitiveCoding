@@ -20,8 +20,7 @@ class Solution:
                     d.append(c)
                     c = []
         d.append(c)
-        if len(d[0])==1:
-            return d[0][0]
+        
         for i in range(len(d)):
             maxi = 0
             for j in range(len(d[i])-1):
