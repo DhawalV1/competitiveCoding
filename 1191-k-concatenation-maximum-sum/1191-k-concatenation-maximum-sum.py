@@ -1,5 +1,5 @@
 class Solution:
-    mod = 10**9 + 7
+    
     def kConcatenationMaxSum(self, arr: List[int], k: int) -> int:
         mod = 10**9 + 7
         if k == 1:
@@ -8,7 +8,7 @@ class Solution:
             return self.kanade(arr+arr) % mod
         sumi = sum(arr)
         if sumi <= 0:
-            return self.kanade(arr+arr+arr) % mod
+            return self.kanade(arr+arr) % mod
         else:
             return (self.kanade(arr+arr) + (k-2)*sumi) % mod 
         
