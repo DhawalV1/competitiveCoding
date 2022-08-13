@@ -1,20 +1,30 @@
 class Solution:
-    def validPath(self, n: int, edges: List[List[int]], start: int, end: int) -> bool:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
         
-        neighbors = defaultdict(list)
-        for n1, n2 in edges:
-            neighbors[n1].append(n2)
-            neighbors[n2].append(n1)
+        if [source, destination] in edges:
+            return True
+        
+        if edges == 0:
+            return False
+        
+        graph = defaultdict(list)
+        
+        for i in edges:
+            graph[i[0]].append(i[1])
+            graph[i[1]].append(i[0])
+        
+        visited = set()
+        
+        def dfs(node):
+            if node == destination:
+                return True
             
-        q = deque([start])
-        seen = set([start])
-        while q:
-            node = q.popleft()            
-            if node == end:
-                return True            
-            for n in neighbors[node]:
-                if n not in seen:
-                    seen.add(n)
-                    q.append(n)
+            visited.add(node)
+            
+            for child in graph[node]:
+                if child not in visited and dfs(child):
+                    return True
                 
-        return False
+            return False
+          
+        return dfs(source)
