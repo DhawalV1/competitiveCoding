@@ -1,7 +1,8 @@
 class Solution:
     def findCenter(self, edges: List[List[int]]) -> int:
-        n = len(edges)
-        sumi = 0
-        for i in range(len(edges)):
-            sumi = sumi + sum(edges[i])
-        return (sumi - (n+1)*(n+2)//2)//(n-1)
+        num1 = edges[0][0]
+        num2 = edges[0][1]
+        if num1 in edges[1]:
+            return num1
+        else:
+            return num2
