@@ -1,22 +1,16 @@
 class Solution:
     def numsSameConsecDiff(self, n: int, k: int) -> List[int]:
         
-        @lru_cache(None)
-        
-        def dfs(i,j):
-            if j < 0 or j > 9 or (j == 0 and i == 1): return []
-            if i == 1: return [str(j)]
-            dirs,out = set([k,-k]),[]
-            for d in dirs:
-                out += [s+str(j) for s in dfs(i-1,j+d)]
-            return out
-        
-        if n == 1:
-            return range(10)
-        return list(chain(*[dfs(n,i) for i in range(10)]))
-        
- 
-    
-     
-        
-       
+        numset = range(1,10)
+        for i in range(n - 1):
+            res = []
+            for num in numset:
+                cur = num % 10
+
+                if cur + k <= 9: res.append(num * 10 + cur + k)
+                if k != 0 and cur - k >= 0: res.append(num * 10 + cur - k)
+
+            numset = res
+
+        return res
+
