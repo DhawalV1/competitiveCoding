@@ -5,13 +5,18 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def tree2str(self, root: Optional[TreeNode]) -> str:
-        if root is None: return ''
-        left = '({})'.format(self.tree2str(root.left)) if (root.left or root.right) else ''
-        right = '({})'.format(self.tree2str(root.right)) if root.right else ''
-        return '{}{}{}'.format(root.val,left,right)
-        
-    
-        
-        
-        
+    def tree2str(self, t: Optional[TreeNode]) -> str:
+        if t is None:
+            return ''
+        result = str(t.val)
+        if t.left:
+            result += '(' + self.tree2str(t.left) + ')'
+            if t.right:
+                result += '(' + self.tree2str(t.right) + ')'
+        elif t.right:
+                result += '()' + '(' + self.tree2str(t.right) + ')'
+        return result
+
+
+
+
