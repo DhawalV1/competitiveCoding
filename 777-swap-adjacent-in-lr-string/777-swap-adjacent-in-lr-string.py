@@ -11,6 +11,7 @@ class Solution:
             return False
         d = {}
         d1 = {}
+        '''
         for i in start:
             if i in d:
                 d[i] += 1
@@ -24,6 +25,7 @@ class Solution:
                 d1[i] = 1
         if d.get('L')!=d1.get('L') or d.get('R')!=d1.get('R') or d.get('X')==None:
             return  False
+        '''
         n = len(start)
         
         Lstart = [i for i in range(n) if start[i] == 'L']
