@@ -26,14 +26,4 @@ class Solution:
         p.next = l or r
         return dummy.next
     
-    '''
-    def merge1(self,l,r):
-        if not l or not r:
-            return l or r
-        if l.val < r.val:
-            l.next = self.merge(l.next,r)
-            return l
-        r.next = self.merge(l,r.next)
-        return r
-    '''   
-        
+   
