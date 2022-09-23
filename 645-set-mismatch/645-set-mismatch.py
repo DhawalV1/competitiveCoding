@@ -1,6 +1,20 @@
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
         
+        ans = [0,0]
+        for i in range(len(nums)):
+            val = abs(nums[i])
+            ans[1] ^= (i+1)^val
+            if nums[val-1] < 0: ans[0] = val
+            else: nums[val-1] = -nums[val-1]
+            
+        ans[1]^=ans[0]
+        return ans
+        
+        
+        
+        ''''
+        
         sumu = 0
         d = {}
         for i in nums:
@@ -15,5 +29,17 @@ class Solution:
         for key in d.keys():
             if d[key]==2:
                 return [key,key+p]
+            
+        '''
+        '''    
+        missing_num = sum( range( len(nums)+1) ) - sum( set(nums) )
+        
+        # To find the duplicate number in an array 
+        dup = sum(nums) - sum(set(nums))
+
+
+        
+        return dup,missing_num
+        '''        
         
         
