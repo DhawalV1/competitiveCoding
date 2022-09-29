@@ -42,7 +42,7 @@ class Solution:
             tot = 0
             for i in range(0, side):
                 p.append(matrix[int(s[i])][int(c[i])])
-            p.sort()
+        
             for i in range(side-1, -1, -1):
                 tot = tot + p[i]
             sum.append(tot)
