@@ -53,7 +53,10 @@ class Solution:
         return max(sum)
 
 
-                
+        #ans = 0 
+        #for perm in permutations(range(m)): 
+         #   ans = max(ans, sum(score[i][j] for i, j in zip(perm, range(m))))
+        #return ans 
         
         
         
