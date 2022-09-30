@@ -2,15 +2,14 @@ class Solution:
     def getSum(self, a: int, b: int) -> int:
         
         
-        MAX = 0x7FFFFFFF
-        
-        MIN = 0x80000000
-        
         mask = 0xFFFFFFFF
-        while b != 0:
-            # ^ get different bits and & gets double 1s, << moves carry
-            a, b = (a ^ b) & mask, ((a & b) << 1) & mask
-        # if a is negative, get a's 32 bits complement positive first
-        # then get 32-bit positive's Python complement negative
-        return a if a <= MAX else ~(a ^ mask)
         
+        while not b == 0:
+            carry = a & b
+            a = (a^b) & mask
+            b = (carry << 1) & mask
+        
+        if a > 2**31:
+            return ~(a^mask)
+        else:
+            return a
