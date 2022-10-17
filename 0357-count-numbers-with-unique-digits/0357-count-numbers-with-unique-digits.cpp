@@ -11,14 +11,12 @@ public:
         }
     int countNumbersWithUniqueDigits(int n) {
         int sum = 1;
-        if(n > 0)
+      
+        for(int i = 0; i < n; i++)
         {
-           int end = (n > 10)? 10 : n;
-           for(int i = 0; i < end; i++)
-           {
-               sum += 9 * permutation(9, i);
-           }
+            sum += 9 * permutation(9, i);
         }
+        
         return sum;
     }
 };
