@@ -1,14 +1,18 @@
-class Solution:
-    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-        d = {}
-        for i,v in enumerate(nums):
-            if v in d:
-                if abs(i-d[v])<=k:
-                    return True
-                else:
-                    d[v] = i
-                
-            else:
-                d[v] = i
-                
-        return False
+class Solution {
+public:
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        unordered_set<int> s;
+       
+        if (k <= 0) return false;
+       
+       
+        for (int i = 0; i < nums.size(); i++)
+        {
+            if (i > k) s.erase(nums[i - k - 1]);
+            if (s.find(nums[i]) != s.end()) return true;
+            s.insert(nums[i]);
+        }
+       
+        return false;
+    }
+};
