@@ -1,17 +1,26 @@
 class Solution {
 public:
     int rotatedDigits(int N) {
-        int f[] = {1,1,2,0,0,2,2,0,1,2};
-        int res = 0;
-        for(int i = 1; i <= N; i++){
-            int p = i;
-            int s = 1;
-            while(p){
-                s *= f[p%10];
-                p /= 10;
+        int count = 0;
+        for(int i=1; i<=N; i++)
+        {
+            bool flag = false;
+            int num = i;
+            while(num > 0)
+            {
+                int d = num%10;
+                if(d == 3 || d == 4 || d == 7)
+                {
+                    flag = false;
+                    break;
+                }
+                if(d == 2 || d == 5 || d == 6 || d == 9)
+                    flag = true;
+                
+                num = num/10;
             }
-            if(s >=2) res+=1;
+            if(flag) count++;
         }
-        return res;
+        return count;
     }
 };
