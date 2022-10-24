@@ -8,4 +8,26 @@ class Solution:
                 if a & c: continue
                 dp.append(a | c)
         return max(len(a) for a in dp)
+    
+    
+    
+    
+    '''
+    maxlen = 0
+        unique = ['']
+        
+        def isvalid(s):
+            return len(s) == len(set(s))
+        
+        for word in arr:
+            for j in unique:
+                tmp = word + j
+                if isvalid(tmp):
+                    unique.append(tmp)
+                    maxlen = max(maxlen, len(tmp))
+                    
+        return maxlen
+        
+        
+    '''
         
