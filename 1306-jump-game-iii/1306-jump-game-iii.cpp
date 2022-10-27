@@ -1,10 +1,10 @@
 class Solution {
 public:
-    bool canReach(vector<int>& A, int cur) {
+    bool canReach(vector<int>& A, int start) {
         queue<int> q;
-        q.push(cur);
+        q.push(start);
         while(size(q)) {
-            cur = q.front(); q.pop();
+            int cur = q.front(); q.pop();
             if(A[cur] == 0) return true;                        // target reached
             if(A[cur] < 0)  continue;                           // already visited - stop further exploration of this path
             if(cur + A[cur] < size(A)) q.push(cur + A[cur]);    // try forward jump
