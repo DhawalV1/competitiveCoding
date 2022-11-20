@@ -20,8 +20,7 @@ class Solution:
             elif x == ')':
                 if stack:
                     stack.pop()
-            elif x == ' ':
-                continue
+            else: continue
                 
         res += temp * sign
         return res
