@@ -6,7 +6,7 @@ class Solution:
             sumi += num%10
             num //= 10
             
-        return int((tmp - sumi%2)/2)
+        return (tmp - sumi%2)//2
             
             
         
