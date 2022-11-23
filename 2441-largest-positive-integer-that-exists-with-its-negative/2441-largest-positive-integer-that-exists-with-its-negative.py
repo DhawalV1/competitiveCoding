@@ -5,7 +5,7 @@ class Solution:
         maxi = -1
         for i in nums:
             if -i in mapi:
-                mapi[i] = 0
+                
                 maxi = max(maxi,abs(i))
             else:
                 mapi[i] = 1
