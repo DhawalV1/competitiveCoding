@@ -1,5 +1,12 @@
 class Solution:
     def trailingZeroes(self, n: int) -> int:
+        if n == 0:return 0
+        m = 0
+        while n>0:
+            n //= 5
+            m += n
+        return m
+        '''
         if n == 0: return 0
         m1 = n//5
         m2 = n//25
@@ -9,3 +16,5 @@ class Solution:
         
         
         return m1 + m2 + m3 + m4 + m5
+        
+        '''
