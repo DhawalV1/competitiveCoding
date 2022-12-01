@@ -9,7 +9,7 @@ class Solution:
                     count += 1
             else:
                 if s[i] in seen:
-                    count2 += 1
+                    count -= 1
                     
-        return count == count2
+        return count == 0
         
