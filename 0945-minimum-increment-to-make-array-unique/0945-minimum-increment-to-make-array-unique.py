@@ -1,11 +1,16 @@
 class Solution:
     def minIncrementForUnique(self, A: List[int]) -> int:
         
-        root = {}
-        def find(x):
-            root[x] = find(root[x] + 1) if x in root else x
-            return root[x]
-        return sum(find(a) - a for a in A)
-            
+        level = -1 
+        res = 0
+        
+        for x in sorted(A):
+            if level < x:
+                level = x
+            else:
+                level += 1
+                res += level - x
+        
+        return res
             
         
