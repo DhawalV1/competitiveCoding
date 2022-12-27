@@ -11,7 +11,7 @@ class Solution:
                 
             else:
                 
-                i = (i + 1)%mod
+                i = (i + 1)
                 count = (count + i)%mod
                 
         return count%mod
