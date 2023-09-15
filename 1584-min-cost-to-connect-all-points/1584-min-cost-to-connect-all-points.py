@@ -3,6 +3,7 @@ class Solution:
         
         
         d, res = {(x, y): float('inf') if i else 0 for i, (x, y) in enumerate(points)}, 0
+        print(res)
         while d:
             x, y = min(d, key=d.get)  # obtain the current minimum edge
             res += d.pop((x, y))      # and remove the corresponding point
