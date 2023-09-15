@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
+        
+        '''
         if root is None:return []
         q,ans =[root],[]
         while q:
@@ -21,4 +23,32 @@ class Solution:
             
         return ans[::-1]
             
+        '''
+        if root is None:
+            return 
         
+        queue = []
+        ans = []
+        
+        queue.append(root)
+        ans = [[root.val]]
+        
+        while(len(queue)):
+            size = len(queue)
+            tmp = []
+            while size:
+            
+                node = queue.pop(0)
+
+                if node.left is not None:
+                    queue.append(node.left)
+                    tmp.append(node.left.val)
+
+                if node.right is not None:
+                    queue.append(node.right)
+                    tmp.append(node.right.val)
+                size -= 1
+            
+            if len(tmp):
+                ans.append(tmp)
+        return ans[::-1]
