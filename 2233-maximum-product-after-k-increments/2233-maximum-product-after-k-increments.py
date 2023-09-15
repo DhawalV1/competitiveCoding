@@ -5,6 +5,8 @@ class Solution:
         for i in nums:
             heapq.heappush(heap,i)
             
+
+            
         while k:
             cur = heapq.heappop(heap)
             heapq.heappush(heap,cur+1)
