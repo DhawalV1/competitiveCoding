@@ -6,7 +6,7 @@ class Solution:
             count.append([mat[i],i])
     
         
-        return [j for i,j in sorted(count)[0:k]]
+        return [j for i,j in sorted([mat[m],m] for m in range(len(mat)))[0:k]]
   
             
         
