@@ -3,11 +3,10 @@ class Solution:
         
         count = []
         for i in range(len(mat)):
-            count.append([sum(mat[i]),i])
-        ans = []
-        #or i,j in sorted(count):
-            #ns.append(j)
+            count.append([mat[i],i])
+    
+        
         return [j for i,j in sorted(count)[0:k]]
-        #rint(sorted(count))
+  
             
         
