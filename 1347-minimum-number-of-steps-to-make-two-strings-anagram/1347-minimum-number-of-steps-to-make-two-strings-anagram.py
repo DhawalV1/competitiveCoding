@@ -9,7 +9,7 @@ class Solution:
             if key in dict1:
                 if (dict2[key]-dict1[key])>0:
                     res += dict2[key]-dict1[key]
-                print(7)
+                
             else:
                 res += dict2[key]
                 
