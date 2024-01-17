@@ -1,5 +1,5 @@
-from collections import Counter
+# from collections import Counter
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
-        
-        return len([i for i in Counter(arr).values()]) == len(set([i for i in Counter(arr).values()]))
+        #print(Counter(arr))
+        return len([i for i in collections.Counter(arr).values()]) == len(set([i for i in collections.Counter(arr).values()]))
