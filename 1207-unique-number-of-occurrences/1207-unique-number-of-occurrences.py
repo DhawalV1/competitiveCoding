@@ -2,4 +2,4 @@
 class Solution:
     def uniqueOccurrences(self, arr: List[int]) -> bool:
         #print(Counter(arr))
-        return len(collections.Counter(arr).values()) == len(set(collections.Counter(arr).values()))
+        return (lambda x: len(x) == len(set(x)))(collections.Counter(arr).values())
