@@ -1,7 +1,7 @@
 class Solution:
     def numberOfGoodSubarraySplits(self, nums: List[int]) -> int:
-        if sum(nums)==1:return 1
-        if sum(nums)==0:return 0
+        if sum(nums)<2:return sum(nums)
+        
         mod = 10**9+7
         pro = 1
         
